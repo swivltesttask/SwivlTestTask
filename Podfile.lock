@@ -1,0 +1,65 @@
+PODS:
+  - AppleGuice (1.2.4)
+  - Expecta (1.0.0)
+  - FastEasyMapping (0.5.1)
+  - libextobjc (0.4.1):
+    - libextobjc/EXTADT (= 0.4.1)
+    - libextobjc/EXTConcreteProtocol (= 0.4.1)
+    - libextobjc/EXTKeyPathCoding (= 0.4.1)
+    - libextobjc/EXTNil (= 0.4.1)
+    - libextobjc/EXTSafeCategory (= 0.4.1)
+    - libextobjc/EXTScope (= 0.4.1)
+    - libextobjc/EXTSelectorChecking (= 0.4.1)
+    - libextobjc/EXTSynthesize (= 0.4.1)
+    - libextobjc/NSInvocation+EXT (= 0.4.1)
+    - libextobjc/NSMethodSignature+EXT (= 0.4.1)
+    - libextobjc/RuntimeExtensions (= 0.4.1)
+    - libextobjc/UmbrellaHeader (= 0.4.1)
+  - libextobjc/EXTADT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libextobjc/UmbrellaHeader (0.4.1)
+  - Masonry (0.6.1)
+  - OCMock (3.1.2)
+  - Reachability (3.2)
+  - Specta (1.0.2)
+
+DEPENDENCIES:
+  - AppleGUICE
+  - Expecta
+  - FastEasyMapping
+  - libextobjc
+  - Masonry
+  - OCMock
+  - Reachability (~> 3.1)
+  - Specta
+
+SPEC CHECKSUMS:
+  AppleGuice: 3cf349eaca213180039725cc449dfccff19cfe3f
+  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  FastEasyMapping: 03a3fbe3af1005e67974358a4ec2b4764f8aa3b4
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
+
+COCOAPODS: 0.36.3
