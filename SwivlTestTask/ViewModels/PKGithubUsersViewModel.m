@@ -19,14 +19,24 @@
     PKGithubUsersView *_view;
 }
 
-@property (weak, nonatomic) PKTableViewDataSource   *pk_tableViewDatasource;
-@property (weak, nonatomic) PKAPIService            *pk_APIService;
+@property (strong, nonatomic) PKTableViewDataSource   *pk_tableViewDatasource;
+@property (strong, nonatomic) PKAPIService            *pk_APIService;
 
 @end
 
 @implementation PKGithubUsersViewModel
 
 #pragma mark - getter/setter
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        
+    }
+    return self;
+}
 
 - (void)setView:(PKGithubUsersView *)view
 {
