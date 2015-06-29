@@ -6,8 +6,13 @@
 //  Copyright (c) 2015 Petro Korienev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface PKGithubUsersView : UIView
+
+- (void)setTableViewDelegate:(id<UITableViewDelegate>)delegate;
+- (void)setTableViewDataSource:(id<UITableViewDelegate>)dataSource;
+- (void)endTopRefreshing;
+- (void)endBottomRefreshing;
+- (void)setTopRefreshControlDidTriggerRefreshBlock:(PKInfoBlock)block;
+- (void)setBottomRefreshControlDidTriggerRefreshBlock:(PKInfoBlock)block;
 
 @end

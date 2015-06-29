@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 Petro Korienev. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@class PKGithubUsersView;
 
 @interface PKGithubUsersViewModel : NSObject
+
+@property (nonatomic, weak) PKGithubUsersView *view;
 
 @end

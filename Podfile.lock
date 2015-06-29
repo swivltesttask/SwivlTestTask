@@ -1,5 +1,7 @@
 PODS:
   - AppleGuice (1.2.4)
+  - CCBottomRefreshControl (0.5):
+    - Masonry
   - Expecta (1.0.0)
   - FastEasyMapping (0.5.1)
   - libextobjc (0.4.1):
@@ -44,6 +46,7 @@ PODS:
 
 DEPENDENCIES:
   - AppleGUICE
+  - CCBottomRefreshControl
   - Expecta
   - FastEasyMapping
   - libextobjc
@@ -54,6 +57,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AppleGuice: 3cf349eaca213180039725cc449dfccff19cfe3f
+  CCBottomRefreshControl: 2cfdbd6f5be5181f5f070637605981d5557e8e32
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   FastEasyMapping: 03a3fbe3af1005e67974358a4ec2b4764f8aa3b4
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
