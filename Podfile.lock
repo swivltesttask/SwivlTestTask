@@ -42,6 +42,9 @@ PODS:
   - Masonry (0.6.1)
   - OCMock (3.1.2)
   - Reachability (3.2)
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
   - Specta (1.0.2)
 
 DEPENDENCIES:
@@ -53,6 +56,7 @@ DEPENDENCIES:
   - Masonry
   - OCMock
   - Reachability (~> 3.1)
+  - SDWebImage
   - Specta
 
 SPEC CHECKSUMS:
@@ -64,6 +68,7 @@ SPEC CHECKSUMS:
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
 
 COCOAPODS: 0.36.3

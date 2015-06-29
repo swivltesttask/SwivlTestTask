@@ -13,5 +13,6 @@
     #import <AppleGUICE/AppleGUICE.h>
     #import <libextobjc/extobjc.h>
     #import "PKConstants.h"
+    #import "Macros.h"
 
 #endif

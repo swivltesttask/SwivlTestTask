@@ -11,6 +11,8 @@
 #import "PKGithubUsersView.h"
 #import "PKTableViewDataSource.h"
 #import "PKAPIService.h"
+#import "PKGithubUserCell.h"
+#import "PKNoItemsCell.h"
 
 @interface PKGithubUsersViewModel ()
 {
@@ -30,14 +32,20 @@
 {
     _view = view;
     
-    [_view setTableViewDelegate:self.pk_tableViewDatasource];
-    [_view setTableViewDataSource:self.pk_tableViewDatasource];
+    [_view.tableView setDelegate:self.pk_tableViewDatasource];
+    [_view.tableView setDataSource:self.pk_tableViewDatasource];
+
+    [self.pk_tableViewDatasource setTableView:_view.tableView];
+
+    [self.pk_tableViewDatasource registerCellWithNibName:NSStringFromClass([PKGithubUserCell class]) forItemClassName:NSStringFromClass([PKGithubUserCell class])];
+    [self.pk_tableViewDatasource registerNoItemsCellNibName:NSStringFromClass([PKNoItemsCell class])];
     
     @weakify(self);
     [_view setTopRefreshControlDidTriggerRefreshBlock:^()
     {
         @strongify(self);
-        [self.pk_APIService fetchGithubUsersSince:0 withCompletion:^(NSArray *result, NSError *error)
+        [self.pk_APIService fetchGithubUsersSince:0
+                                   withCompletion:^(NSArray *result, NSError *error)
         {
             @strongify(self);
             if (!error && result.count)
@@ -48,16 +56,17 @@
         }];
     }];
     
-    [_view setTopRefreshControlDidTriggerRefreshBlock:^()
-     {
+    [_view setBottomRefreshControlDidTriggerRefreshBlock:^()
+    {
          @strongify(self);
-         [self.pk_APIService fetchGithubUsersSince:0 withCompletion:^(NSArray *result, NSError *error)
+         [self.pk_APIService fetchGithubUsersSince:self.pk_tableViewDatasource.lastItem.paginationToken
+                                    withCompletion:^(NSArray *result, NSError *error)
           {
               @strongify(self);
               if (!error && result.count)
               {
-                  [self.pk_tableViewDatasource setItems:result];
-                  [self->_view endTopRefreshing];
+                  [self.pk_tableViewDatasource addItems:result];
+                  [self->_view endBottomRefreshing];
               }
           }];
      }];

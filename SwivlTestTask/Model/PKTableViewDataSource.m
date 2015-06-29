@@ -9,6 +9,8 @@
 #import "PKTableViewDataSource.h"
 #import "PKConfigurable.h"
 
+NSString * const PKNoItemsCellKey = @"PKNoItemsCellKey";
+
 @interface PKTableViewDataSource ()
 
 @property (nonatomic, weak) UITableView *tableView;
@@ -35,6 +37,12 @@
     self.reuseIdentifiers[className] = nibName;
 }
 
+- (void)registerNoItemsCellNibName:(NSString*)nibName
+{
+    [self.tableView registerNib:[UINib nibWithNibName:nibName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:nibName];
+    self.reuseIdentifiers[PKNoItemsCellKey] = nibName;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -42,20 +50,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.listItems.count;
+    return self.listItems.count ?: 1;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id<PKListItem> item = self.listItems[indexPath.row];
-    
-    UITableViewCell<PKConfigurable> *cell = [tableView dequeueReusableCellWithIdentifier:self.reuseIdentifiers[NSStringFromClass([item class])]];
-    if ([cell conformsToProtocol:@protocol(PKConfigurable)])
+    if (self.listItems.count)
     {
-        [cell configureWithItem:item];
+        id<PKListItem> item = self.listItems[indexPath.row];
+        
+        UITableViewCell<PKConfigurable> *cell = [tableView dequeueReusableCellWithIdentifier:self.reuseIdentifiers[NSStringFromClass([item class])]];
+        if ([cell conformsToProtocol:@protocol(PKConfigurable)])
+        {
+            [cell configureWithItem:item];
+        }
+        
+        return cell;
     }
-    
-    return cell;
+    else
+    {
+        return [tableView dequeueReusableCellWithIdentifier:self.reuseIdentifiers[PKNoItemsCellKey]];
+    }
 }
 
 - (void)setItems:(NSArray *)items

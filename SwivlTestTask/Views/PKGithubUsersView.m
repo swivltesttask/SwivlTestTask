@@ -12,9 +12,8 @@
 
 @interface PKGithubUsersView ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (assign, nonatomic) id<UITableViewDelegate> tableViewDelegate;
-@property (assign, nonatomic) id<UITableViewDelegate> tableViewDataSource;
+@property (weak, nonatomic, readwrite) IBOutlet UITableView *tableView;
+
 @property (copy, nonatomic) PKInfoBlock topRefreshControlDidTriggerRefreshBlock;
 @property (copy, nonatomic) PKInfoBlock bottomRefreshControlDidTriggerRefreshBlock;
 

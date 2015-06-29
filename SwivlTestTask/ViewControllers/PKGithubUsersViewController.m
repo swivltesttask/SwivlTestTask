@@ -8,20 +8,29 @@
 
 #import "PKGithubUsersViewController.h"
 
+#import "PKGithubUsersViewModel.h"
+#import "PKGithubUsersView.h"
+
 @interface PKGithubUsersViewController ()
+
+@property (weak, nonatomic) IBOutlet UIView *githubUsersContainerView;
+
+@property (strong, nonatomic) PKGithubUsersView *githubUsersView;
+@property (strong, nonatomic) PKGithubUsersViewModel *pk_viewModel;
 
 @end
 
 @implementation PKGithubUsersViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    self.githubUsersView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([PKGithubUsersView class]) owner:nil options:nil] firstObject];
+    [self.pk_viewModel setView:self.githubUsersView];
+    
+    [self.githubUsersContainerView addSubview:self.githubUsersView];
+    EMBED_VIEW_INTO_VIEW_WITH_EDGE_INSETS(self.githubUsersView, self.githubUsersContainerView, UIEdgeInsetsZero);
 }
 
 @end

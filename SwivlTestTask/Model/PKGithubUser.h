@@ -13,5 +13,6 @@
 @property (nonatomic, assign)   NSUInteger userId;
 @property (nonatomic, copy)     NSString *username;
 @property (nonatomic, strong)   NSString *avatarURL;
+@property (nonatomic, strong)   NSString *htmlURL;
 
 @end

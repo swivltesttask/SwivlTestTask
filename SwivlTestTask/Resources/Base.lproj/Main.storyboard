@@ -15,8 +15,23 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bY0-cd-XLt" userLabel="GithubUsersContainerView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bY0-cd-XLt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="5k3-cS-EId"/>
+                            <constraint firstItem="bY0-cd-XLt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="GlU-wZ-fx1"/>
+                            <constraint firstAttribute="bottom" secondItem="bY0-cd-XLt" secondAttribute="bottom" id="ee4-Aw-f39"/>
+                            <constraint firstAttribute="trailing" secondItem="bY0-cd-XLt" secondAttribute="trailing" id="r25-NL-OpM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="githubUsersContainerView" destination="bY0-cd-XLt" id="reO-KG-63R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

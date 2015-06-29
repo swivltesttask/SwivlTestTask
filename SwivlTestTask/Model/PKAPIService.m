@@ -10,13 +10,23 @@
 
 #import "PKGithubUser.h"
 
+NSString * const PKGithubUsersAPIRequestPath        = @"https://api.github.com/users";
+NSString * const PKGithubUsersAPISinceParameterName = @"since";
+
+NSString * const PKGithubUserIdResponseKey          = @"id";
+NSString * const PKGithubUserLoginResponseKey       = @"login";
+NSString * const PKGithubUserAvatarURLResponseKey   = @"avatar_url";
+NSString * const PKGithubUserHTMLURLResponseKey     = @"html_url";
+
+#define PK_HTTP_OK 200
+
 @implementation PKAPIService
 
 - (void)fetchGithubUsersSince:(NSUInteger)since withCompletion:(PKSuccessErrorResultArrayBlock)completion
 {
     PKSuccessErrorResultArrayBlock blk = [completion copy];
 
-    NSString *requestString = [NSString stringWithFormat:@"https://api.github.com/users%@", since ? [NSString stringWithFormat:@"?since=%lu", (unsigned long)since] : @""];
+    NSString *requestString = [NSString stringWithFormat:@"%@%@", PKGithubUsersAPIRequestPath, since ? [NSString stringWithFormat:@"?%@=%lu", PKGithubUsersAPISinceParameterName, (unsigned long)since] : @""];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
@@ -25,7 +35,7 @@
         if (!connectionError)
         {
             NSHTTPURLResponse *httpResponse = [response isKindOfClass:[NSHTTPURLResponse class]] ? (NSHTTPURLResponse*)response : nil;
-            if (httpResponse.statusCode != 200)
+            if (httpResponse.statusCode != PK_HTTP_OK)
             {
                 if (blk)
                 {
@@ -48,9 +58,10 @@
                         {
                             PKGithubUser *user  = [PKGithubUser new];
                             
-                            user.userId         = [object[@"id"] unsignedIntegerValue];
-                            user.username       = object[@"login"];
-                            user.avatarURL      = object[@"avatar_url"];
+                            user.userId         = [object[PKGithubUserIdResponseKey] unsignedIntegerValue];
+                            user.username       = object[PKGithubUserLoginResponseKey];
+                            user.avatarURL      = object[PKGithubUserAvatarURLResponseKey];
+                            user.htmlURL        = object[PKGithubUserHTMLURLResponseKey];
                             
                             [result addObject:user];
                         }];

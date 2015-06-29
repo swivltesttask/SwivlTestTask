@@ -12,5 +12,6 @@
 - (UITableView*)tableView;
 
 - (void)registerCellWithNibName:(NSString*)nibName forItemClassName:(NSString*)className;
+- (void)registerNoItemsCellNibName:(NSString*)nibName;
 
 @end

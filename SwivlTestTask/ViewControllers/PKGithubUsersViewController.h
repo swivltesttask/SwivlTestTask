@@ -6,10 +6,9 @@
 //  Copyright (c) 2015 Petro Korienev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PKBaseViewController.h"
 
-@interface PKGithubUsersViewController : UIViewController
-
+@interface PKGithubUsersViewController : PKBaseViewController
 
 @end
 

@@ -22,6 +22,11 @@
 		5BD5AD361B4180D300C75336 /* PKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5AD351B4180D300C75336 /* PKTableViewDataSource.m */; };
 		5BD5AD391B4180EA00C75336 /* PKGithubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5AD381B4180EA00C75336 /* PKGithubUser.m */; };
 		5BD5AD3D1B41879100C75336 /* PKAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5AD3C1B41879100C75336 /* PKAPIService.m */; };
+		5BD5AD451B41B86100C75336 /* PKGithubUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5AD431B41B86100C75336 /* PKGithubUserCell.m */; };
+		5BD5AD461B41B86100C75336 /* PKGithubUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD5AD441B41B86100C75336 /* PKGithubUserCell.xib */; };
+		5BD5AD4D1B41B98500C75336 /* PKNoItemsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5AD4B1B41B98500C75336 /* PKNoItemsCell.m */; };
+		5BD5AD4E1B41B98500C75336 /* PKNoItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD5AD4C1B41B98500C75336 /* PKNoItemsCell.xib */; };
+		5BD5AD521B41C7C600C75336 /* PKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5AD511B41C7C600C75336 /* PKBaseViewController.m */; };
 		E1A13EDDCA3FD3A3DE9EA9EB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E91A5B5D23ADD1B9CB9F71D7 /* libPods.a */; };
 		F9671DFEAAF46ED7F174B5E8 /* libPods-SwivlTestTaskTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC9BCF4CAFD320876C7B33C /* libPods-SwivlTestTaskTests.a */; };
 /* End PBXBuildFile section */
@@ -73,6 +78,15 @@
 		5BD5AD3F1B41903200C75336 /* PKConfigurable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKConfigurable.h; sourceTree = "<group>"; };
 		5BD5AD401B41904900C75336 /* PKItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKItem.h; sourceTree = "<group>"; };
 		5BD5AD411B41927500C75336 /* PKTableViewDataSourceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTableViewDataSourceProtocol.h; sourceTree = "<group>"; };
+		5BD5AD421B41B86100C75336 /* PKGithubUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKGithubUserCell.h; sourceTree = "<group>"; };
+		5BD5AD431B41B86100C75336 /* PKGithubUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKGithubUserCell.m; sourceTree = "<group>"; };
+		5BD5AD441B41B86100C75336 /* PKGithubUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKGithubUserCell.xib; sourceTree = "<group>"; };
+		5BD5AD4A1B41B98500C75336 /* PKNoItemsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKNoItemsCell.h; sourceTree = "<group>"; };
+		5BD5AD4B1B41B98500C75336 /* PKNoItemsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKNoItemsCell.m; sourceTree = "<group>"; };
+		5BD5AD4C1B41B98500C75336 /* PKNoItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKNoItemsCell.xib; sourceTree = "<group>"; };
+		5BD5AD4F1B41C38B00C75336 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		5BD5AD501B41C7C600C75336 /* PKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKBaseViewController.h; sourceTree = "<group>"; };
+		5BD5AD511B41C7C600C75336 /* PKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKBaseViewController.m; sourceTree = "<group>"; };
 		AA2A3567ACDFC0AF2EB86C00 /* Pods-SwivlTestTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwivlTestTaskTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwivlTestTaskTests/Pods-SwivlTestTaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		DFC9BCF4CAFD320876C7B33C /* libPods-SwivlTestTaskTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwivlTestTaskTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91A5B5D23ADD1B9CB9F71D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +192,8 @@
 		5BD5AD211B408A3900C75336 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5BD5AD501B41C7C600C75336 /* PKBaseViewController.h */,
+				5BD5AD511B41C7C600C75336 /* PKBaseViewController.m */,
 				5BD5ACFE1B4086C800C75336 /* PKGithubUsersViewController.h */,
 				5BD5ACFF1B4086C800C75336 /* PKGithubUsersViewController.m */,
 			);
@@ -198,6 +214,10 @@
 			children = (
 				5BD5AD271B408AC400C75336 /* PKGithubUsersView.h */,
 				5BD5AD281B408AC400C75336 /* PKGithubUsersView.m */,
+				5BD5AD421B41B86100C75336 /* PKGithubUserCell.h */,
+				5BD5AD431B41B86100C75336 /* PKGithubUserCell.m */,
+				5BD5AD4A1B41B98500C75336 /* PKNoItemsCell.h */,
+				5BD5AD4B1B41B98500C75336 /* PKNoItemsCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +229,8 @@
 				5BD5AD041B4086C800C75336 /* Images.xcassets */,
 				5BD5AD061B4086C800C75336 /* LaunchScreen.xib */,
 				5BD5AD2D1B413BDC00C75336 /* PKGithubUsersView.xib */,
+				5BD5AD441B41B86100C75336 /* PKGithubUserCell.xib */,
+				5BD5AD4C1B41B98500C75336 /* PKNoItemsCell.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -216,6 +238,7 @@
 		5BD5AD2F1B41805B00C75336 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5BD5AD4F1B41C38B00C75336 /* Macros.h */,
 				5BD5AD311B4180A900C75336 /* PKConstants.h */,
 				5BD5AD321B4180A900C75336 /* PKConstants.m */,
 			);
@@ -243,7 +266,7 @@
 				5BD5AD401B41904900C75336 /* PKItem.h */,
 				5BD5AD411B41927500C75336 /* PKTableViewDataSourceProtocol.h */,
 			);
-			name = Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		8CFDB0ACB751570DE5FDA868 /* Frameworks */ = {
@@ -342,6 +365,8 @@
 			files = (
 				5BD5AD031B4086C800C75336 /* Main.storyboard in Resources */,
 				5BD5AD2E1B413BDC00C75336 /* PKGithubUsersView.xib in Resources */,
+				5BD5AD4E1B41B98500C75336 /* PKNoItemsCell.xib in Resources */,
+				5BD5AD461B41B86100C75336 /* PKGithubUserCell.xib in Resources */,
 				5BD5AD081B4086C800C75336 /* LaunchScreen.xib in Resources */,
 				5BD5AD051B4086C800C75336 /* Images.xcassets in Resources */,
 			);
@@ -424,11 +449,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD5AD521B41C7C600C75336 /* PKBaseViewController.m in Sources */,
 				5BD5AD261B408AA300C75336 /* PKGithubUsersViewModel.m in Sources */,
 				5BD5AD3D1B41879100C75336 /* PKAPIService.m in Sources */,
 				5BD5AD001B4086C800C75336 /* PKGithubUsersViewController.m in Sources */,
 				5BD5AD391B4180EA00C75336 /* PKGithubUser.m in Sources */,
+				5BD5AD4D1B41B98500C75336 /* PKNoItemsCell.m in Sources */,
 				5BD5AD1F1B40882900C75336 /* PKTestAppDelegate.m in Sources */,
+				5BD5AD451B41B86100C75336 /* PKGithubUserCell.m in Sources */,
 				5BD5AD361B4180D300C75336 /* PKTableViewDataSource.m in Sources */,
 				5BD5AD291B408AC400C75336 /* PKGithubUsersView.m in Sources */,
 				5BD5ACFD1B4086C800C75336 /* PKAppDelegate.m in Sources */,

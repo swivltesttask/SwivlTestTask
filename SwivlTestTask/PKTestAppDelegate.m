@@ -10,12 +10,12 @@
 
 @implementation PKTestAppDelegate
 
-- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
++ (void)initialize
 {
-    [AppleGuice setIocPrefix:@"pk_"];    
-    [AppleGuice setInstanceCreationPolicy:AppleGuiceInstanceCreationPolicyCreateMocks];
+    [AppleGuice setInstanceCreationPolicy:AppleGuiceInstanceCreationPolicyLazyLoad];
+    [AppleGuice setMethodInjectionPolicy:AppleGuiceMethodInjectionPolicyAutomatic];
+    [AppleGuice setIocPrefix:@"_pk_"];
     [AppleGuice startServiceWithImplementationDiscoveryPolicy:AppleGuiceImplementationDiscoveryPolicyRuntime];
-    return YES;
 }
 
 @end

@@ -8,8 +8,8 @@
 
 @interface PKGithubUsersView : UIView
 
-- (void)setTableViewDelegate:(id<UITableViewDelegate>)delegate;
-- (void)setTableViewDataSource:(id<UITableViewDelegate>)dataSource;
+@property (weak, nonatomic, readonly) IBOutlet UITableView *tableView;
+
 - (void)endTopRefreshing;
 - (void)endBottomRefreshing;
 - (void)setTopRefreshControlDidTriggerRefreshBlock:(PKInfoBlock)block;

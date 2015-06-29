@@ -6,6 +6,7 @@ pod 'Masonry'
 pod 'AppleGUICE'
 pod 'FastEasyMapping'
 pod 'CCBottomRefreshControl'
+pod 'SDWebImage'
 
 target 'SwivlTestTaskTests', :exclusive => true do
     pod 'OCMock'

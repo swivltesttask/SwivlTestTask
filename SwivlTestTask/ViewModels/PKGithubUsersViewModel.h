@@ -8,7 +8,7 @@
 
 @class PKGithubUsersView;
 
-@interface PKGithubUsersViewModel : NSObject
+@interface PKGithubUsersViewModel : NSObject <AppleGuiceInjectable>
 
 @property (nonatomic, weak) PKGithubUsersView *view;
 
